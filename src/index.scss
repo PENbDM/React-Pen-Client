@@ -1,0 +1,605 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Bebas Neue";
+  background-color: #e7f6ff;
+}
+
+// button,
+// input[type="submit"],
+// input[type="reset"] {
+//   background: none;
+//   color: inherit;
+//   border: none;
+//   padding: 0;
+//   font: inherit;
+//   cursor: pointer;
+//   outline: inherit;
+// }
+
+.wrapper {
+  border-radius: 20px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  width: 1080px;
+  background-color: white;
+  margin: 85px auto;
+
+  li {
+    list-style-type: none;
+  }
+}
+div.Burger {
+  display: none;
+}
+@media (max-width: 1200px) {
+  div.Burger {
+    display: none;
+  }
+  .wrapper {
+    width: 1000px;
+  }
+  nav.navbar {
+    width: 1000px;
+  }
+  .Border {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    width: 768px;
+  }
+  nav.navbar {
+    width: 768px;
+  }
+  .Border {
+    max-width: 768px;
+  }
+
+  div.rightNavRight {
+    display: flex;
+  }
+  div.LogOutPlate {
+    display: flex;
+    flex-direction: column;
+  }
+  div.LogOutPlate {
+    span {
+      padding-bottom: 5px;
+    }
+    button {
+      margin-top: 15px;
+    }
+  }
+  ul#menu.rightNav {
+    padding-right: 20px;
+  }
+  div.rightNavLeft {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+  }
+  img.favImg {
+    padding-left: 3px;
+  }
+  img.cartSvg {
+    margin-bottom: 20px;
+  }
+  p {
+    padding-bottom: 7px;
+  }
+}
+
+@media (max-width: 768px) {
+  div.LogOutPlate {
+    span {
+      padding-left: 0px;
+      margin-right: 10px;
+    }
+    span {
+      margin-right: 10px;
+    }
+  }
+  .wrapper {
+    width: 480px;
+  }
+  nav.navbar {
+    padding-top: 0px;
+    width: 480px;
+  }
+  .Border {
+    max-width: 480px;
+  }
+  .lefnavLiText {
+    display: none;
+  }
+  img.logo {
+    padding-left: 0px;
+  }
+  button.navbar_burger {
+    display: block;
+  }
+
+  ul.rightNav {
+    visibility: hidden;
+    margin-top: 20px;
+    text-align: center;
+
+    display: flex;
+    width: 100px;
+
+    p {
+      padding-top: 5px;
+    }
+    .favImg {
+      padding-left: 4px;
+    }
+    .cartSvg {
+      padding-top: 10px;
+    }
+  }
+  div.authPlate {
+    display: block;
+  }
+  ul.leftNav {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.Burger {
+    padding-right: 20px;
+    display: initial;
+  }
+  .authPlate {
+    height: 100px;
+    button {
+      margin-top: 10px;
+    }
+  }
+  ul#menu.rightNav {
+    padding-left: 40px;
+    padding-right: 0px;
+  }
+  div.rightNavLeft {
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+  }
+  div.rightNavRight {
+    display: flex;
+  }
+  button.login {
+    margin-top: 37px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wrapper {
+    min-width: 100%;
+  }
+}
+.navbar_burger:hover {
+  background-color: rgb(115, 251, 251);
+}
+.navbar_burger {
+  display: none;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: aqua;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    left: 4.5px;
+    transition: background-color 0.5s, opacity 0.25s, transform 0.5s;
+  }
+  span:nth-child(1) {
+    background-color: red;
+    transform: translateY(-10px);
+  }
+  span:nth-child(2) {
+    background-color: green;
+  }
+  span:nth-child(3) {
+    background-color: blue;
+    transform: translateY(10px);
+  }
+
+  //KRESTIK
+}
+.navbar.open .rightNav {
+  width: 210px;
+  visibility: visible;
+}
+.navbar.open .navbar_burger span:nth-child(1) {
+  background-color: red;
+  transform: translateY(0) rotate(45deg);
+}
+.navbar.open .navbar_burger span:nth-child(2) {
+  opacity: 0;
+}
+.navbar.open .navbar_burger span:nth-child(3) {
+  background-color: blue;
+  transform: translateY(0) rotate(-45deg);
+}
+
+.logo {
+  padding-left: 45px;
+}
+.navbar {
+  padding-bottom: 40px;
+  padding-top: 40px;
+  align-items: center;
+  justify-content: space-between;
+  width: 1080px;
+  max-height: 128px;
+  display: flex;
+
+  li {
+    font-size: 20px;
+  }
+}
+
+.rightNavLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .cartSvg {
+    padding-right: 5px;
+  }
+  p {
+    padding-right: 30px;
+  }
+  .favImg {
+    padding-right: 15px;
+  }
+}
+.leftNav {
+  padding-left: 16px;
+  display: flex;
+  li {
+    padding-bottom: 4px;
+  }
+}
+.leftnavLi {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.rightNav {
+  align-items: center;
+  padding-right: 63px;
+
+  display: flex;
+
+  button {
+    min-width: 60px;
+    font-size: 18px;
+    height: 25px;
+  }
+  img {
+    cursor: pointer;
+    margin-top: 7px;
+  }
+  p {
+    padding-left: 4px;
+
+    font-size: 19px;
+  }
+}
+.Border {
+  width: 1080px;
+  height: 1px;
+  border: 1px;
+  background-color: #eaeaea;
+  border-radius: 2px;
+}
+.SearchBlock {
+  p {
+    padding-top: 50px;
+    padding-left: 60px;
+    font-size: 20px;
+  }
+}
+
+// CARD
+
+.Cards {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.Card {
+  margin: 17px;
+  border-radius: 50px;
+  border: 3px solid #f3f3f3;
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding-top: 25px;
+  height: 270px;
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+  }
+}
+
+.Card:hover {
+  -webkit-transition: all 0.2s ease-out;
+  box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+}
+
+.favBtn {
+  padding-left: 15px;
+  position: absolute;
+}
+.CardBottom {
+  display: flex;
+}
+.CardImg {
+  margin-left: 23px;
+}
+.CardTitle {
+  width: 175px;
+  font-size: 18px;
+  margin-left: 11px;
+  margin-top: 20px;
+}
+.CardBottom {
+  margin-top: 25px;
+}
+.CardBottomRight {
+  margin-left: 80px;
+  margin-top: 10px;
+  button {
+    cursor: pointer;
+  }
+}
+.CardBottomLeft {
+  margin-left: 12px;
+}
+.price {
+  font-size: 16px;
+  color: #bdbdbd;
+}
+.price2 {
+  margin-top: 4px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+//DRAWER
+
+.Drawer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  right: 0;
+  background: #ffffff;
+  box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+}
+.AddtionalBlock {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  img {
+    padding-top: 90px;
+  }
+  h4 {
+    padding-top: 20px;
+    font-size: 30px;
+  }
+  h6 {
+    padding-top: 10px;
+    font-size: 24px;
+  }
+  button {
+    margin-top: 70px;
+  }
+}
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+.DrawerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+  }
+}
+.CardsDrawer {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: auto;
+  min-height: 300px;
+}
+.CardDrawer {
+  align-items: center;
+  border-radius: 50px;
+  border: 3px solid #f3f3f3;
+  display: flex;
+  margin-bottom: 25px;
+  flex-direction: row;
+  width: 380px;
+
+  min-height: 120px;
+  button {
+    margin-left: 3px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+  }
+}
+.DrawerTitle {
+  margin-left: 15px;
+  width: 180px;
+  p {
+    font-size: 20px;
+
+    padding-top: 10px;
+  }
+}
+.DrawerCardImg {
+  margin-left: 15px;
+}
+.DrawerBottomBlock {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.DrawerBottom {
+  padding-bottom: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 20px;
+  }
+}
+.DrawerBorder {
+  display: flex;
+
+  border: 0.5px;
+  border-style: dashed;
+  margin-top: 12px;
+
+  min-width: 250px;
+}
+.DrawerBorder2 {
+  border: 0.5px;
+  border-style: dashed;
+  margin-top: 13px;
+  width: 220px;
+}
+
+.DrawerGreenButton {
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 13px;
+  width: 400px;
+  height: 55px;
+  background-color: #9dd458;
+  color: white;
+  border: none;
+}
+.DrawerGreenButton:hover {
+  background-color: rgb(11, 158, 14);
+}
+
+// AUTH SIGN, LOGIN
+
+.TempPlate {
+  padding-top: 70px;
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  height: 400px;
+  p {
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+  }
+  label {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  input {
+    height: 24px;
+  }
+  button {
+    margin: 0 auto;
+    margin-top: 15px;
+    height: 30px;
+    width: 200px;
+  }
+}
+.Form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.authPlate {
+  display: flex;
+  flex-direction: row;
+  button {
+    cursor: pointer;
+    margin-left: 15px;
+  }
+}
+
+.LogOutPlate {
+  align-items: center;
+  display: flex;
+  span {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  button {
+    cursor: pointer;
+    margin-left: 10px;
+  }
+}
+
+.Order {
+  h1 {
+    padding-top: 20px;
+    margin-left: 60px;
+  }
+}
+.EmptyCart {
+  padding-top: 200px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 160px;
+    height: 160px;
+  }
+  p {
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 25px;
+  }
+  span {
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  button {
+    margin-top: 20px;
+  }
+}
